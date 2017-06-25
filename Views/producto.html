@@ -65,7 +65,8 @@
 			
 	      <div class="modal-body">
 
-			<form class="form-horizontal">	
+			<form class="form-horizontal">
+
 				  <div class="form-group">
 				    <label for="codigo" class="col-sm-2 control-label">Codigo</label>
 				    <div class="col-sm-10">
@@ -106,12 +107,102 @@
 			<!-- Footer del modal -->
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		        <button type="button" class="btn btn-primary" onclick="saveProduct()"> Save </button>
+		        <button type="button"  id="accionProduct" class="btn btn-primary" onclick="saveProduct()"> Save </button>
+		      </div>
+		      
+	    </div>
+	  </div>
+	</div>
+
+
+
+ 	<!--Modal Para Editar-->
+ 	<div class="modal fade" id="myModalEditProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <!-- Contenido -->
+	    <div class="modal-content">
+			<!-- Cabecera -->
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Edit Product</h4>
+	      </div>
+			<!-- Cuerpo del modal -->
+			
+	      <div class="modal-body">
+
+			<form class="form-horizontal">
+
+				  <div class="form-group">
+				    <label for="codigo" class="col-sm-2 control-label">Codigo</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="codigoe" placeholder="Codigo Producto" disabled="true">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="nombree" placeholder="Nombre Producto">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				  	<label for="tipo" class="col-sm-2 control-label">Tipo</label>
+					<div class="col-sm-10">
+						<select class="form-control" title="Seleccionar Tipo Producto" id="tipoe">
+							<option value="unselect">Seleccionar Tipo Producto</option>
+							<option value="legumbres">Legumbres</option>
+							<option value="leguminosas">Leguminosas</option>
+							<option value="granos">Granos</option>
+						</select>
+					</div>
+				  </div>
+				  <div class="form-group">
+				    <label for="valor" class="col-sm-2 control-label">Valor</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="valore" placeholder="Valor Producto">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="cantidad" class="col-sm-2 control-label">Cantidad</label>
+				    <div class="col-sm-10">
+				      <input type="number" class="form-control" id="cantidade" placeholder="Cantidad Producto">
+				    </div>
+				  </div>
+				</form>	  		
+	      </div>
+			<!-- Footer del modal -->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        <button type="button"  id="accionProduct" class="btn btn-primary" onclick="editProduct()"> Save </button>
 		      </div>
 		      
 	    </div>
 	  </div>
 	</div>	
+	<!--Fin Modal Para Editar-->
+	
+	<!--Modal Para Eliminar-->
+		
+		<div class="modal fade" id="myModalDeleteProduct" tabindex="-1" role='dialog' aria-labelledby="modalEliminarLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<spam aria-hidden="true">&times;</spam></button>
+							<h4 class="modal-title" id="modalEliminarLabel">Delete Product</h4>
+					</div>
+					<div class="modal-body" >
+						¿Esta Seguro que desea Eliminar este Producto?<strong data-name=""></strong>
+					</div>
+					<div class="modal-footer">
+						<button type="button" onclick="deleteProduct()" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!--Fin Modal Para Eliminar-->
+
 
 	<script type="text/javascript" src="../Components/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../Components/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>

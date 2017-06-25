@@ -12,12 +12,12 @@
 			$result = $prodDao->delete($codigo);
 
 			if($result){
-				$msg = "borrado Exitoso";
+				echo "borrado Exitoso";
 			}else{
-				$msg = "Error al borrar";
+				echo "Error al borrar";
 			}
 		}else{
-			$msg = "El Codigo del Producto No Se encuentra Registrado";
+			echo "Parece que el producto que intenta Eliminar no se encuentra en nuestros Registros";
 		}		
 	}else if($page == 'create'){
 		$codigo = $_POST['codigo'];
@@ -34,12 +34,36 @@
 			$result = $prodDao->create($prod);
 
 			if($result){
-				$msg = "Gurdado Exitoso";
+				echo "Gurdado Exitoso";
 			}else{
-				$msg = "No Guardo";
+				echo "No Guardo";
 			}
 		}else{
-			$msg = "El Codigo del Producto Ya Se encuentra Registrado";
+			echo "El Codigo del Producto Ya Se encuentra Registrado";
+		}
+	}else if($page == 'edit'){
+		
+		$codigo = $_POST['codigo'];
+
+		if($prodDao->read($codigo) != null){
+
+			$nombre = $_POST['nombre'];
+			$unidad = $_POST['unidad'];
+			$valor = $_POST['valor'];
+			$tipo = $_POST['tipo'];
+
+			$prod = new Producto($codigo,$nombre,$unidad,$tipo,$valor);
+
+			$result = $prodDao->update($prod);
+
+
+			if($result){
+				echo "Su Producto Fue Editado Satisfactoriamente";
+			}else{
+				$msg = "Sentimos las molestias un error ha ocurrido durante el proceso";
+			}
+		}else{
+			echo "Parece que el producto que intenta modificar ya no se encuentra en nuestros Registros";
 		}
 	}else{
 

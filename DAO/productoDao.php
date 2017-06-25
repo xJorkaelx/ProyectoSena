@@ -79,7 +79,7 @@
 				$stmt = $db->prepare("select * from producto");
 				if($stmt->execute()){
 					while($fila = $stmt->fetch()){
-						$lista->attach(new Producto($fila[0],$fila[5],$fila[1],$fila[3],$fila[2],$fila[4]));
+						$lista->attach(new Producto($fila[0],$fila[5],$fila[1],$fila[3],$fila[4]));
 					}
 				}else{
 					return null;
