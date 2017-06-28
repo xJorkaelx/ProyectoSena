@@ -6,7 +6,7 @@ function saveProduct(){
 	var valor = $('#valor').val();
 	var unidad = $('#cantidad').val();
 	$.ajax({
-		url: '../Controllers/productoController.php?opc=create',
+		url: '../../Controllers/productoController.php?opc=create',
 		type: 'POST',
 		data: "codigo="+codigo+"&nombre="+nombre+"&tipo="+tipo+"&valor="+valor+"&unidad="+unidad,
 		success: function(result) {
@@ -36,7 +36,7 @@ function editProduct(){
 	var unidad = $('#cantidade').val();
 	
 	var temporal = $.ajax({
-		url: '../Controllers/productoController.php?opc=edit',
+		url: '../../Controllers/productoController.php?opc=edit',
 		type: 'POST',
 		data: "codigo="+codigo+"&nombre="+nombre+"&tipo="+tipo+"&valor="+valor+"&unidad="+unidad,
 		success: function(result) {
@@ -61,7 +61,7 @@ function deleteProduct(){
 	var codigo = $('#codigoe').val();
 	
 	$.ajax({
-		url: '../Controllers/productoController.php?opc=delete',
+		url: '../../Controllers/productoController.php?opc=delete',
 		type: 'POST',
 		data: "codigo="+codigo,
 		success: function(result) {
@@ -87,7 +87,7 @@ function viewData(){
 		var table = $('#dataTableProducto').DataTable().destroy();
     		table = $('#dataTableProducto').DataTable({
                 "ajax": {
-                    "url" : '../Controllers/productoController.php',
+                    "url" : '../../Controllers/productoController.php',
                     "type" : "get",
                     "datatype" : "json"
                 },
